@@ -11,11 +11,11 @@ function auth_require(string $role = '') : void
     if (empty($_SESSION['user_id']) || empty($_SESSION['role'])) {
         session_destroy();
     
-    header('Location: /UNISTAY/wk5/login.php?error=unauthorised_access');
+    header('Location: /UNISTAY/wk4/login.php?error=unauthorised_access');
 
 $redirect = ($_SESSION['role'] === 'admin')
-            ? '/UNISTAY/wk5/admin/dashboard.php'
-            : '/UNISTAY/wk5/student/dashboard.php';
+            ? '/UNISTAY/wk4/admin/dashboard.php'
+            : '/UNISTAY/wk4/student/dashboard.php';
 header('Location: ' . $redirect . '?error=forbidden');
         exit;
     }

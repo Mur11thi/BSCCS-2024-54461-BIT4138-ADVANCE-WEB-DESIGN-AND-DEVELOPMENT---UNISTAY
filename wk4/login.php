@@ -4,8 +4,8 @@ require_once __DIR__ . '/config/connection.php';
 
 if (!empty($_SESSION['user_id'])) {
     $dest = ($_SESSION['role'] === 'admin')
-           ? '/UNISTAY/wk5/admin/dashboard.php'
-           : '/UNISTAY/wk5/student/dashboard.php';
+           ? '/UNISTAY/wk4/admin/dashboard.php'
+           : '/UNISTAY/wk4/student/dashboard.php';
     header('Location: ' . $dest);
     exit;
 }
