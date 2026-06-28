@@ -1,0 +1,345 @@
+
+
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=DM+Serif+Display&display=swap');
+
+:root {
+  --forest: #2E4A2E;
+  --forest-dark: #1E3B1E;
+  --gold: #C7A951;
+  --gold-light: #E2C87B;
+  --white: #FFFFFF;
+  --off-white: #F8F6F0;
+  --gray: #6B6B6B;
+  --error: #D32F2F;
+  --success: #388E3C;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'DM Sans', sans-serif;
+  background: var(--off-white);
+  color: #333;
+  line-height: 1.6;
+}
+
+/* ---------- HEADER & NAVIGATION ---------- */
+.main-header {
+  background: var(--forest);
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+}
+
+.main-header .logo {
+  font-family: 'DM Serif Display', serif;
+  font-size: 1.4rem;
+}
+
+.main-nav a,
+.main-nav .user-badge {
+  color: var(--gold-light);
+  text-decoration: none;
+  margin-left: 1.5rem;
+  font-weight: 500;
+}
+
+.main-nav a:hover {
+  color: var(--gold);
+}
+
+.btn-logout {
+  background: var(--gold);
+  color: var(--forest-dark);
+  padding: 0.4rem 1rem;
+  border-radius: 4px;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.main-content {
+  padding: 2rem;
+  min-height: 70vh;
+}
+
+.main-footer {
+  background: var(--forest-dark);
+  color: var(--gold-light);
+  text-align: center;
+  padding: 1rem;
+  margin-top: 2rem;
+}
+
+/* ---------- LOGIN PAGE ---------- */
+.auth-page {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, var(--forest) 0%, #1E3B1E 100%);
+}
+
+.auth-card {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  width: 420px;
+  max-width: 90%;
+  overflow: hidden;
+}
+
+.auth-card-top {
+  background: var(--forest);
+  padding: 2rem;
+  text-align: center;
+  color: white;
+}
+
+.auth-logo {
+  font-size: 3rem;
+}
+
+.auth-title {
+  font-family: 'DM Serif Display', serif;
+  font-size: 1.8rem;
+  margin-top: 0.5rem;
+}
+
+.auth-subtitle {
+  color: var(--gold-light);
+}
+
+.auth-body {
+  padding: 2rem;
+}
+
+/* ---------- FORMS ---------- */
+.form-group {
+  margin-bottom: 1.5rem;
+}
+
+.form-group label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 0.3rem;
+  color: var(--forest);
+}
+
+.form-control {
+  width: 100%;
+  padding: 0.8rem;
+  border: 2px solid #ddd;
+  border-radius: 6px;
+  font-size: 1rem;
+  transition: border-color 0.3s;
+}
+
+.form-control:focus {
+  border-color: var(--gold);
+  outline: none;
+}
+
+.form-control.error {
+  border-color: var(--error);
+}
+
+.form-error {
+  color: var(--error);
+  font-size: 0.85rem;
+  display: none;
+  margin-top: 0.2rem;
+}
+
+/* ---------- PASSWORD STRENGTH METER ---------- */
+.pw-strength-bar {
+  height: 4px;
+  background: #eee;
+  margin-top: 0.5rem;
+  border-radius: 2px;
+}
+
+.pw-strength-fill {
+  height: 100%;
+  width: 0%;
+  border-radius: 2px;
+  transition: width 0.3s;
+}
+
+.pw-strength-label {
+  font-size: 0.8rem;
+  margin-top: 0.2rem;
+}
+
+/* ---------- BUTTONS ---------- */
+.btn {
+  display: inline-block;
+  padding: 0.7rem 1.5rem;
+  border-radius: 6px;
+  font-weight: 600;
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.btn-primary {
+  background: var(--forest);
+  color: white;
+}
+
+.btn-primary:hover {
+  background: var(--forest-dark);
+}
+
+.btn-danger {
+  background: var(--error);
+  color: white;
+}
+
+.btn-sm {
+  padding: 0.3rem 0.8rem;
+  font-size: 0.85rem;
+}
+
+.w-full {
+  width: 100%;
+}
+
+/* ---------- ALERT / ERROR MESSAGE ---------- */
+.alert {
+  padding: 0.8rem;
+  border-radius: 6px;
+  margin-bottom: 1rem;
+}
+
+.alert-error {
+  background: #FDE8E8;
+  color: var(--error);
+  border: 1px solid #F5C6C6;
+}
+
+/* ---------- DASHBOARD STAT CARDS ---------- */
+.stat-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.stat-card {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  border-left: 6px solid var(--forest);
+}
+
+.stat-card.gold {
+  border-left-color: var(--gold);
+}
+
+.stat-card.red {
+  border-left-color: var(--error);
+}
+
+.stat-label {
+  color: var(--gray);
+  font-size: 0.9rem;
+}
+
+.stat-value {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--forest-dark);
+  margin-top: 0.2rem;
+}
+
+/* ---------- TABLES ---------- */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background: white;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+th {
+  background: var(--forest);
+  color: white;
+  padding: 0.8rem;
+  text-align: left;
+}
+
+td {
+  padding: 0.8rem;
+  border-bottom: 1px solid #eee;
+}
+
+tr:last-child td {
+  border-bottom: none;
+}
+
+/* ---------- STATUS BADGES ---------- */
+.badge {
+  padding: 0.2rem 0.6rem;
+  border-radius: 4px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.badge-pending {
+  background: #FFF3CD;
+  color: #856404;
+}
+
+.badge-confirmed {
+  background: #D4EDDA;
+  color: #155724;
+}
+
+.badge-cancelled {
+  background: #F8D7DA;
+  color: #721C24;
+}
+
+.badge-available {
+  background: #D4EDDA;
+  color: #155724;
+}
+
+.badge-full {
+  background: #F8D7DA;
+  color: #721C24;
+}
+
+.badge-maintenance {
+  background: #E2E3E5;
+  color: #383D41;
+}
+
+/* ---------- ROOM CARDS (student rooms page) ---------- */
+.room-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 1.5rem;
+}
+
+.room-card {
+  background: white;
+  border-radius: 8px;
+  padding: 1.5rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+  border-top: 5px solid var(--gold);
+}
+
+.room-card h3 {
+  color: var(--forest);
+}
